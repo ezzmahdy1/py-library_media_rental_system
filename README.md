@@ -24,57 +24,17 @@ A console-based rental management system built in Python. It manages a catalog o
 - Separate tracking of confirmed (payable) fees vs. running/accruing fees
 - Dedicated flow for members to pay down pending fees
 
-### Data persistence
-- All items and members are stored in human-readable `.txt` files (`items.txt`, `members.txt`)
-- Custom regex-based parser reads and writes structured records without needing a database engine
-- Data files are created automatically on first run if they don't already exist
 
-### Interface
-- Clean, styled terminal menus and tables via `rich`
-- Input validation on every user-facing prompt, with clear error messages for invalid IDs, malformed entries, and out-of-range actions
-
-## Tech stack
-
-- **Python 3**
-- [`rich`](https://pypi.org/project/rich/) — terminal styling, panels, and tables
-- `re` — regex-based parsing of the text-file database
-- `datetime` — date tracking for loans and fee calculation
-
-## Getting started
-
-### Requirements
+## Requirements
 ```
-pip install rich
+rich
 ```
-
-### Run it
-```
-python library_system.py
-```
-
-On first run, `items.txt` and `members.txt` will be created automatically in the same folder.
-
-### Build a standalone executable (optional)
-This project can be packaged into a single Windows `.exe` with [PyInstaller](https://pyinstaller.org/), so it can run without a Python installation:
-```
-pip install pyinstaller
-pyinstaller --onefile --console library_system.py
-```
-The executable will be in the generated `dist/` folder.
 
 ## Project structure
 
 - `Item` (base class) → `Book`, `DVD`, `Game`
 - `Member` (base class) → `Student`, `Staff`, `Vip`
-- Each menu action follows a consistent pattern: **read from file → validate input → apply action → write back to file**
 
-## Known limitations
-
-- Uses flat text files rather than a real database, so it isn't designed for concurrent/multi-user use
-- Titles or creator names containing `"` or `.` can break the regex parser
-- No authentication — anyone running the program has full access
-
-These were conscious trade-offs for a learning project focused on OOP and file handling rather than production deployment.
 
 ## What I learned
 
