@@ -39,11 +39,12 @@ rich
 ## What I learned
 
 This project was my introduction to:
-- Object-oriented design in Python (inheritance, `super()`, class hierarchies)
-- Reading and writing structured data to plain text files
-- Regex for parsing custom data formats
-- Building a robust text-based UI with input validation
-- Packaging a Python script into a distributable executable
+- **Object-oriented design in Python (inheritance, class hierarchies)**.
+- **Learned database fundamentals the hard way.** Building my own read/parse/write logic with regex meant handling schema, keys, and consistency by hand.
+- **First real taste of system design.** Deciding how items, members, and fees relate to each other, and keeping one consistent pattern across every feature.
+- Regex for parsing custom data formats.
+- Building a robust text-based UI with input validation.
+- Packaging a Python script into a distributable executable.
 
 ## License
 
